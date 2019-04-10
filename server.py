@@ -11,10 +11,33 @@ def desk():
 
 @app.route("/tagged/word/%string word%")
 def req():
+    # return tagged word#
     data = request.args.get('word', {}, type=str)
     return jsonify(dict(results=str(data)))
 
-# def ask(word):#
+
+@app.route("/tagged/sentence/")
+def tag_sent():
+    # return tagged sentence#
+    return 1
+
+
+@app.route("/sentence/deptree/")
+def sent_dtree():
+    # return tree of syntax dependencies#
+    return 2
+
+
+@app.route("/sentence/gramtree/")
+def sent_gtree():
+    # return grammatical tree#
+    return 3
+
+
+@app.route("/word/guess/")
+def morph_r():
+    # return morphology rules for word#
+    return 4
 
 
 if __name__ == "__main__":
