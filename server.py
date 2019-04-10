@@ -9,7 +9,7 @@ def desk():
     return render_template("index.html")
 
 
-@app.route("/word/recognize/")
+@app.route("/tagged/word/%string word%")
 def req():
     data = request.args.get('word', {}, type=str)
     return jsonify(dict(results=str(data)))
@@ -18,4 +18,4 @@ def req():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run()
