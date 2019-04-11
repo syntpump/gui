@@ -1,11 +1,13 @@
 import flask
 
 app = flask.Flask(__name__)
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
 
 
 @app.route("/")
 def desk():
-    return flask.render_template("index.html")
+    return flask.render_template("index.html.j2")
 
 
 @app.route("/js/<string:script>")
