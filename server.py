@@ -16,7 +16,7 @@ def req(word=None):
     return jsonify(dict(results=str(data)))
 
 
-@app.route("/tagged/sentence/")
+@app.route("/tagged/sentence/<string:sentence>")
 def tag_sent():
     # return tagged sentence#
     return 1
