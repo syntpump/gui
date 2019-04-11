@@ -9,7 +9,7 @@ def desk():
     return render_template("index.html")
 
 
-@app.route("/tagged/word/%string word%")
+@app.route("/tagged/word/<string:word>")
 def req():
     # return tagged word#
     data = request.args.get('word', {}, type=str)
