@@ -10,7 +10,7 @@ def desk():
 
 
 @app.route("/tagged/word/<string:word>")
-def req():
+def req(word=None):
     # return tagged word#
     data = request.args.get('word', {}, type=str)
     return jsonify(dict(results=str(data)))
