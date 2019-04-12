@@ -10,6 +10,11 @@ def desk():
     return flask.render_template("index.html.j2")
 
 
+@app.route("/word_process")
+def displ():
+    return flask.render_template("process_word.html.j2")
+
+
 @app.route("/js/<string:script>")
 def get_script(script):
     return flask.send_file(

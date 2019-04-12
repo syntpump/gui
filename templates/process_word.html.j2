@@ -1,0 +1,79 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Syntext-ua{% endblock %}
+
+{% block headimports %}
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+	<div>
+		<textarea placeholder="Введіть текст для опрацювання"></textarea>
+	</div>
+	<div>
+		<button>Розпізнати</button>
+	</div>
+	<h2>Відповідний варіант</h2>
+	<div id="table">
+		<table>
+			<tr>
+				<td>Початкова форма</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>На яке питання відповідає в реченні</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Істота чи неістота</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Власна чи загальна назва</td>
+				<td></td>
+			<tr>
+				<td>Конкретне, збірне, речовинне чи абстрактне значення</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Рід</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Число</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Відмінок</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Відміна</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Група</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Спосіб творення (якщо це похідне слово)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Синтаксична роль у реченні</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<button>Проінспектувати правило</button>
+	</div>
+	<h2>Усі можливі варіанти</h2>
+{% endblock %}
+
+{% block endbody %}
+	<script type="text/javascript" src="js/api.js"></script>
+{% endblock %}
