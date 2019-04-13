@@ -25,6 +25,7 @@
 {% block endbody %}
 	<script type="text/javascript" src="js/api.js"></script>
 	<script type="text/javascript" src="js/blocks.js"></script>
+	<script type="text/javascript" src="js/localization.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript">
 		const search_results = $("search_results");
@@ -36,9 +37,10 @@
 			search_results.className = "visible";
 			most_possible.clear();
 			all_rules.clear();
-			most_possible.innerHTML += Blocks.ruleContainer({
-				"upos": data["bestMatch"]["upos"]
-			});
+			most_possible.innerHTML += Blocks.ruleContainer(data["bestMatch"]);
+			data["allMatches"].forEach(
+				rule => all_rules.innerHTML += Blocks.ruleContainer(rule)
+			);
 		}
 
 		const search = () => {
