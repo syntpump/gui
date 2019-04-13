@@ -4,7 +4,9 @@ class Blocks{
 
 	static ruleContainer(args){
 		if(!args["_id"])
-			args["_id"] = "(немає id)";
+			args["_id"] = `<span class="ruleId noId">(немає id)</span>`;
+		else
+			args["_id"] = `<span class="ruleId">id: ${args["_id"]}</span>`;
 
 		let properties = "";
 
@@ -20,13 +22,13 @@ class Blocks{
 		}
 
 		return `
-			<div class="ruleBlock">
+			<div class="ruleBlock box">
 				<div class="top">
 					<span class="upos">${args["upos"]}</span>
 					<span class="xpos">${args["xpos"]}</span>
 				</div>
 				<table class="properties">${properties}</table>
-				<span class="ruleId">${args["_id"]}</span>
+				${args["_id"]}
 			</div>
 		`;
 	}

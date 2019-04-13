@@ -1,7 +1,76 @@
+body {
+	background: #eee;
+	font-family: "Roboto", "Segoe UI", sans-serif;
+	padding: 40px 20px;
+	color: #222
+}
+
+h1 {
+	font-size: 3em
+}
+
+h2 {
+	font-size: 2.2em
+}
+
+input[type="text"] {
+	border: 0;
+	padding: 10px;
+	font: inherit;
+	width: 250px
+}
+
+button {
+	border: 0;
+	background: black;
+	color: white;
+	padding: 10px 20px;
+	font: inherit;
+	cursor: pointer;
+	transition: .3s;
+}
+
+button:hover {
+	background: #333
+}
+
 .hidden{
 	display: none;
 }
 
 .visible{
 	display: block
+}
+
+.box {
+	margin: 20px 0;
+	background: white;
+	padding:10px;
+	max-width: 600px;
+}
+
+.ruleBlock .upos {
+	font-size: 1.5em;
+	margin-right: 15px
+}
+
+.ruleBlock .xpos {
+	color: #999
+}
+
+.ruleBlock .properties {
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+
+.ruleBlock .ruleId:not(.noId) {
+	font-family: "Roboto Mono", monospace
+}
+
+.ruleBlock .properties td:first-child {
+	padding: 5px 15px 5px 0
+}
+
+.ruleBlock .properties {
+	border-collapse: collapse;
 }

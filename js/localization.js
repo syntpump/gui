@@ -5,9 +5,16 @@ Localization = {
 
 	noId: "(немає id)",
 	udProps : {
-		"Tense": "Час"
+		"Tense": "Час",
+		"Number": "Число"
 	},
 	udValues: {
-		"Pres": "Теперішній"
+		"Pres": "Теперішній",
+		"Past": "Минулий",
+		"Fut": "Майбутній",
+		"Sing": "Однина",
+		"Plur": "Множина",
+		"Dual": "Двоїна",
+		"Ptan": "Парне"
 	}
 }
