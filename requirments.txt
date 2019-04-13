@@ -1,1 +1,2 @@
+pysyntext>=2
 flask

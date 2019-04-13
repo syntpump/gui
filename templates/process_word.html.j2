@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
 
-{% block title %}Syntext-ua{% endblock %}
+{% block title %}syntext-ua{% endblock %}
 
 {% block headimports %}
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -10,70 +10,39 @@
 {% endblock %}
 
 {% block content %}
-	<div>
-		<textarea placeholder="Введіть текст для опрацювання"></textarea>
+	<div class="search_top">
+		<input type="text" placeholder="Введіть слово" id="search_input"></input>
+		<button onclick="search()">Розпізнати</button>
 	</div>
-	<div>
-		<button>Розпізнати</button>
+	<div id="search_results" class="hidden">
+		<h2>Найбільш ймовірний варіант</h2>
+		<div id="most_possible"></div>
+		<h2>Усі можливі варіанти</h2>
+		<div id="all_rules"></div>
 	</div>
-	<h2>Відповідний варіант</h2>
-	<div id="table">
-		<table>
-			<tr>
-				<td>Початкова форма</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>На яке питання відповідає в реченні</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Істота чи неістота</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Власна чи загальна назва</td>
-				<td></td>
-			<tr>
-				<td>Конкретне, збірне, речовинне чи абстрактне значення</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Рід</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Число</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Відмінок</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Відміна</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Група</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Спосіб творення (якщо це похідне слово)</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Синтаксична роль у реченні</td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
-	<div>
-		<button>Проінспектувати правило</button>
-	</div>
-	<h2>Усі можливі варіанти</h2>
 {% endblock %}
 
 {% block endbody %}
 	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/blocks.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		const search_results = $("search_results");
+		const most_possible = $("most_possible");
+		const all_rules = $("all_rules");
+		const search_input = $("search_input");
+
+		const drawResponse = data => {
+			search_results.className = "visible";
+			most_possible.clear();
+			all_rules.clear();
+			most_possible.innerHTML += Blocks.ruleContainer({
+				"upos": data["bestMatch"]["upos"]
+			});
+		}
+
+		const search = () => {
+			API.send("GET", `tagged/word/${search_input.value}`, drawResponse);
+		}
+	</script>
 {% endblock %}

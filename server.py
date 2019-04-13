@@ -1,4 +1,19 @@
+from pysyntext.libs.db import DB
+from pysyntext.libs.ud.udt import UDTParser
+from pysyntext.libs.morphology import MorphologyRecognizer
+
 import flask
+import json
+
+
+print("Initializing classes...")
+
+morphRecogn = MorphologyRecognizer(
+    collection=DB().cli.get_collection("xposrules"),
+    tagparser=UDTParser(),
+    priorityList=json.load(open("dominations.json")),
+    applierFunc=MorphologyRecognizer.selectByEnding
+)
 
 app = flask.Flask(__name__)
 app.jinja_env.trim_blocks = True
@@ -31,11 +46,17 @@ def get_style(style):
     )
 
 
+# Return tagged word
 @app.route("/tagged/word/<string:word>")
 def req(word=None):
-    # return tagged word#
-    data = request.args.get('word', {}, type=str)
-    return jsonify(dict(results=str(data)))
+    result = morphRecogn.recognize(word, withApplier=True, showDB=True)
+    return json.dumps(
+        {
+            "bestMatch": result[0],
+            "allMatches": result[1]
+        },
+        default=str
+    )
 
 
 @app.route("/tagged/sentence/<string:sentence>")
