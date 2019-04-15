@@ -1,6 +1,5 @@
 from pysyntext.libs.db import DB
-from pysyntext.libs.ud.udt import UDTParser
-from pysyntext.libs.morphology import MorphologyRecognizer
+from pysyntext.predefinator import Predefinator
 
 import flask
 import json
@@ -8,11 +7,11 @@ import json
 
 print("Initializing classes...")
 
-morphRecogn = MorphologyRecognizer(
-    collection=DB().cli.get_collection("xposrules"),
-    tagparser=UDTParser(),
-    priorityList=json.load(open("dominations.json")),
-    applierFunc=MorphologyRecognizer.selectByEnding
+predef = Predefinator(open("config.json"))
+
+morphRecogn = predef.inited(
+    "MorphologyRecognizer",
+    collection=DB().cli.get_collection
 )
 
 app = flask.Flask(__name__)
