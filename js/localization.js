@@ -8,25 +8,25 @@ Localization = {
 		"Tense": "Час",
 		"Number": "Число"
 		"Abbr": "Абревіатура"	
-		"Animacy": "Істотність"
-		"Aspect": "Вид"
+		"Animacy": "Істота"
+		"Aspect": "Вид дієслова"
 		"Case": "Відмінок"
-		"Degree": "Ступінь"
+		"Degree": "Ступінь порівняння прикметників"
 		"Foreign": "Запозичене"
 		"Gender": "Рід"
 		"Hyph": "Складене слово"
 		"Mood": "Спосіб"
-		"NameType": "Тип назви"	
+		"NameType": "Власна назва"	
 		"NumType": "Тип числа"
-		"PartType": "Тип частки"
+		"PartType": "Вид частки"
 		"Person": "Особа"
 		"Polarity": "Ствердність"
 		"Poss": ""
 		"PronType": ""
 		"PunctType": ""
-		"Reflex": "",
+		"Reflex": ''
 		"VerbForm": ""
-		"Voice": "Тип"
+		"Voice": ""
 	}
 	udValues: {
 		"Pres": "Теперішній",
@@ -39,7 +39,7 @@ Localization = {
 		abbreviation	av
 abessive	ab
 ablative	al
-absolute superlative	ao "Найвищий складений"
+absolute superlative	ao "Найвищий ступінь складена форма"
 absolutive	au
 accusative	ac "Знахідний"
 active	at
@@ -57,7 +57,7 @@ aspect	ax
 associative	az
 bantu noun class	bc
 benefactive	be
-cardinal	ca
+cardinal	ca "Прості"
 case	cs
 causative case	cc
 causative voice	cv
@@ -68,11 +68,12 @@ collective pronominal	cp
 comitative	cm
 common gender	cg "Спільний"
 comparative case	cy
-comparative degree	cd "Вищий"
+comparative degree	cd "Вищий ступінь"
 complex definiteness	cf
 conditional	ci "Умовний"
 conjunctive	cj
 considerative	ce
+conseq "Пояснювальна"
 construct state	cr
 converb	cb
 count plural	co
@@ -104,15 +105,14 @@ exclusive	eu
 factive	fa
 feminine	fm "Жіночий"
 finite verb	fv
-first person	1p
+first person	"Перша особа"
 firsthand	fh
 foreign word	fw
 formal	fo
-fourth person	4p
-fraction	fq
+fraction	fq "Дробові"
 frequentative	fu
 future	ft
-gender	ge
+geographical name	"Географічна назва"
 genitive	gn "Родовий"
 gerund	gr
 gerundive	gv
@@ -150,11 +150,11 @@ middle voice	mv
 modality	md
 mood	mo
 motivative	mt
-multiplicative numeral	ml
+multiplicative numeral	ml "Множинні"
 narrative	na
 necessitative	ne
 negative polarity	np
-negative pronominal	nr
+nationality "Національність"
 neuter	nu "Середній"
 nominative	no "Називний"
 non-finite verb	nv
@@ -165,8 +165,8 @@ noun class	nc
 number	nm
 numeral type	nt
 oblique case	oq
-optative	op
-ordinal	or
+optative	op "Бажальний"
+ordinal	or "Порядкові"
 participle	pa
 partitive	pv
 passive	p1
@@ -175,7 +175,7 @@ past perfect	pp
 paucal	pu
 perfective aspect	pf "Доконаний"
 perlative	pr
-person	po
+person	po "Ім’я людини"
 personal	pl
 pluperfect	pe
 plural	pb
@@ -193,7 +193,7 @@ prolative	px
 pronominal type	py
 prospective	pz
 purposive case	p0
-purposive mood	pq
+purposive mood	pq "Спонукальний"
 quantifier	qf
 quantitative plural	qp
 quotative	qt
@@ -204,21 +204,21 @@ reduced definiteness	rd
 reflexive	rf
 register	rg
 relative	rl
-second person	2p
-set numeral	sn
+second person	"Друга особа"
+set numeral	sn "Для незлічуваних"
 singular	si
 singulare tantum	st
 specific indefinite	sf
-subjunctive	sj
+surname "Прізвище"
 sublative	sb
 superessive	sp
-superlative	sl "Найвищий"
+superlative	sl "Найвищий ступінь"
 supine	su
 temporal	tm
 tense	te
 terminal allative	ta
 terminative	tr
-third person	3p
+third person	"Третя особа"
 total	to
 transgressive	tg
 translative	ts
