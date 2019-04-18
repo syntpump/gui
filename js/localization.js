@@ -8,25 +8,25 @@ Localization = {
 		"Tense": "Час",
 		"Number": "Число"
 		"Abbr": "Абревіатура"	
-		"Animacy": "Істота"
-		"Aspect": "Вид дієслова"
+		"Animacy": "Істотність"
+		"Aspect": "Вид"
 		"Case": "Відмінок"
-		"Degree": "Ступінь порівняння прикметників"
+		"Degree": "Ступінь"
 		"Foreign": "Запозичене"
 		"Gender": "Рід"
 		"Hyph": "Складене слово"
 		"Mood": "Спосіб"
-		"NameType": ""	
-		"NumType": ""
-		"PartType": ""
-		"Person": ""
-		"Polarity": ""
+		"NameType": "Тип назви"	
+		"NumType": "Тип числа"
+		"PartType": "Тип частки"
+		"Person": "Особа"
+		"Polarity": "Ствердність"
 		"Poss": ""
 		"PronType": ""
 		"PunctType": ""
-		"Reflex": ''
+		"Reflex": "",
 		"VerbForm": ""
-		"Voice": ""
+		"Voice": "Тип"
 	}
 	udValues: {
 		"Pres": "Теперішній",
@@ -39,7 +39,7 @@ Localization = {
 		abbreviation	av
 abessive	ab
 ablative	al
-absolute superlative	ao "Найвищий ступінь складена форма"
+absolute superlative	ao "Найвищий складений"
 absolutive	au
 accusative	ac "Знахідний"
 active	at
@@ -68,7 +68,7 @@ collective pronominal	cp
 comitative	cm
 common gender	cg "Спільний"
 comparative case	cy
-comparative degree	cd "Вищий ступінь"
+comparative degree	cd "Вищий"
 complex definiteness	cf
 conditional	ci "Умовний"
 conjunctive	cj
@@ -212,7 +212,7 @@ specific indefinite	sf
 subjunctive	sj
 sublative	sb
 superessive	sp
-superlative	sl "Найвищий ступінь"
+superlative	sl "Найвищий"
 supine	su
 temporal	tm
 tense	te
