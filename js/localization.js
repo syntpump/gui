@@ -21,215 +21,74 @@ Localization = {
 		"PartType": "Вид частки"
 		"Person": "Особа"
 		"Polarity": "Ствердність"
-		"Poss": ""
-		"PronType": ""
-		"PunctType": ""
-		"Reflex": ''
-		"VerbForm": ""
-		"Voice": ""
+		"Poss": "Присвійність"
+		"PronType": "Тип "
+		"PunctType": "Займенниковий тип"
+		"Reflex": "Рефлективність"
+		"VerbForm": "Дієслівна форма"
+		"Voice": "Стан"
 	}
 	udValues: {
-		"Pres": "Теперішній",
-		"Past": "Минулий",
-		"Fut": "Майбутній",
-		"Sing": "Однина",
-		"Plur": "Множина",
-		"Dual": "Двоїна",
-		"Ptan": "Парне"
-		abbreviation	av
-abessive	ab
-ablative	al
-absolute superlative	ao "Найвищий ступінь складена форма"
-absolutive	au
-accusative	ac "Знахідний"
-active	at
-additive	ai
-adessive	ad
-admirative	am
-adverbial participle	ap
-affirmative	af
-allative	aa
-animate	"Жива"
-antipassive	ae
-aorist	as
-article	ar
-aspect	ax
-associative	az
-bantu noun class	bc
-benefactive	be
-cardinal	ca "Прості"
-case	cs
-causative case	cc
-causative voice	cv
-clusivity	cl
-collective noun	cn
-collective numeral	cu
-collective pronominal	cp
-comitative	cm
-common gender	cg "Спільний"
-comparative case	cy
-comparative degree	cd "Вищий ступінь"
-complex definiteness	cf
-conditional	ci "Умовний"
-conjunctive	cj
-considerative	ce
-conseq "Пояснювальна"
-construct state	cr
-converb	cb
-count plural	co
-counting form	cx
-dative	dt "Давальний"
-definite	df
-definiteness	ds
-degree of comparison	dc
-delative	dl
-demonstrative	dm
-desiderative	dv
-destinative	dx
-direct case	de
-direct voice	do
-directional allative	di
-distributive case	du
-distributive numeral	dn
-dual	da
-elative	el
-elevated referent	er
-emphatic	eh
-equative case	ec
-equative degree	ed
-ergative	eg
-essive	es
-evidentiality	ev
-exclamative	ex
-exclusive	eu
-factive	fa
-feminine	fm "Жіночий"
-finite verb	fv
-first person	"Перша особа"
-firsthand	fh
-foreign word	fw
-formal	fo
-fraction	fq "Дробові"
-frequentative	fu
-future	ft
-geographical name	"Географічна назва"
-genitive	gn "Родовий"
-gerund	gr
-gerundive	gv
-greater paucal	gp
-greater plural	gl
-habitual	ha "Теперішній простий"
-human	hu "Людська"
-humbled speaker	hs
-illative	il
-imperative	im "Наказовий"
-imperfect tense	it
-imperfective aspect	ia "Інфінітив"
-inanimate	in "Нежива"
-inclusive	ic
-indefinite	id
-indefinite pronominal	ip
-indicative	ii "Дійсний"
-inessive	ie
-infinitive	if
-informal	io
-injunctive	ij
-instructive	is
-instrumental	ix "Орудний"
-interrogative	ir
-inverse number	iu
-inverse voice	iv
-iterative	iy "Повторювана дія"
-jussive	ju
-lative	la
-locative	lo "Місцевий"
-masculine	ma "Чоловіча"
-masdar	ms
-mass noun	mn
-middle voice	mv
-modality	md
-mood	mo
-motivative	mt
-multiplicative numeral	ml "Множинні"
-narrative	na
-necessitative	ne
-negative polarity	np
-nationality "Національність"
-neuter	nu "Середній"
-nominative	no "Називний"
-non-finite verb	nv
-non-firsthand	nf
-non-human	nh "Не людська"
-non-specific indefinite	ni
-noun class	nc
-number	nm
-numeral type	nt
-oblique case	oq
-optative	op "Бажальний"
-ordinal	or "Порядкові"
-participle	pa
-partitive	pv
-passive	p1
-past	pt
-past perfect	pp
-paucal	pu
-perfective aspect	pf "Доконаний"
-perlative	pr
-person	po "Ім’я людини"
-personal	pl
-pluperfect	pe
-plural	pb
-plurale tantum	pc
-polarity	pd
-politeness	pn
-positive degree	pg "Якісний прикметник"
-positive polarity	pw
-possessive	ps
-potential	pi
-present	ph
-preterite	pj
-progressive	pk "Недоконаний"
-prolative	px
-pronominal type	py
-prospective	pz
-purposive case	p0
-purposive mood	pq "Спонукальний"
-quantifier	qf
-quantitative plural	qp
-quotative	qt
-range numeral	rn
-reciprocal pronominal	rp
-reciprocal voice	rv
-reduced definiteness	rd
-reflexive	rf
-register	rg
-relative	rl
-second person	"Друга особа"
-set numeral	sn "Для незлічуваних"
-singular	si
-singulare tantum	st
-specific indefinite	sf
-surname "Прізвище"
-sublative	sb
-superessive	sp
-superlative	sl "Найвищий ступінь"
-supine	su
-temporal	tm
-tense	te
-terminal allative	ta
-terminative	tr
-third person	"Третя особа"
-total	to
-transgressive	tg
-translative	ts
-trial	ti
-uter	ut
-verb form	vf
-verbal adjective	va
-verbal adverb	vv
-verbal noun	vn
-vocative	vo "Кличний"
-voice	vi
-zero person
+		"pres": "Теперішній",
+		"past": "Минулий",
+		"fut": "Майбутній",
+		"sing": "Однина",
+		"plur": "Множина",
+		"dual": "Двоїна",
+		"ptan": "Парне"
+		"absolute superlative": "Найвищий ступінь складена форма"
+		"accusative": "Знахідний"
+		"active": "Дійсний"
+		"animate": "Жива"
+		"cardinal": "Прості"
+		"common gender": "Спільний"
+		"comparative degree": "Вищий ступінь"
+		"conditional": "Умовний"
+		"conseq": "Пояснювальна"
+		"dative": "Давальний"
+		"demonstrative": "Вказівний"
+		"feminine": "Жіночий"
+		"finite verb": "Способове"
+		"first person": "Перша особа"
+		"fraction": "Дробові"
+		"geographical name": "Географічна назва"
+		"genitive": "Родовий"
+		"habitual": "Теперішній простий"
+		"human": "Людська"
+		"imperative": "Наказовий"
+		"imperfective aspect": "Інфінітив"
+		"inanimate": "Нежива"
+		"indefinite pronominal": "Невизначений"
+		"indicative": "Дійсний"
+		"infinitive": "Інфінітив"
+		"instrumental": "Орудний"
+		"interrogative": "Питальний"
+		"iterative": "Повторювана дія"
+		"locative": "Місцевий"
+		"masculine": "Чоловіча"
+		"multiplicative numeral": "Множинні"
+		"negative pronominal": "Заперечний"
+		"nationality": "Національність"
+		"neuter": "Середній"
+		"nominative": "Називний"
+		"non-human": "Не людська"
+		"optative": "Бажальний"
+		"ordinal": "Порядкові"
+		"participle": "Дієприслівник"
+		"passive": "Пасивний"
+		"perfective aspect": "Доконаний"
+		"person": "Ім’я людини"
+		"personal": "Присвійний"
+		"positive degree": "Якісний прикметник"
+		"progressive": "Недоконаний"
+		"purposive mood": "Спонукальний"
+		"relative": "Відносний"
+		"second person": "Друга особа"
+		"set numeral": "Для незлічуваних"
+		"surname": "Прізвище"
+		"superlative": "Найвищий ступінь"
+		"third person": "Третя особа"
+		"total": "Збірний"
+		"vocative": "Кличний"
 	}
 }
