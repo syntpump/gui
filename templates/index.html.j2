@@ -10,6 +10,19 @@
 {% endblock %}
 
 {% block content %}
+	<div class="search_top">
+		<input type="text" placeholder="Введіть речення" id="search_input"></input>
+		<button onclick="search()">Розпізнати</button>
+	</div>
+	<div id="search_results" class="hidden">
+		<h1>Найбільш ймовірний варіант</h1>
+		<div id="most_possible"></div>
+		<h1>Усі можливі варіанти</h1>
+		<div id="all_rules"></div>
+		<div>
+		<button>Проінспектувати правило</button>
+	</div>
+	</div>
 {% endblock %}
 
 {% block endbody %}

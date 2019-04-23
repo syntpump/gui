@@ -45,6 +45,15 @@
 
 		const search = () => {
 			API.send("GET", `tagged/word/${search_input.value}`, drawResponse);
-		}
+		}	
+	</script>
+	<script type="text/javascript">
+		(function() {
+  			document.querySelector('input').addEventListener('keydown', function(e) {
+    			if (e.keyCode === 13) {
+      				search();
+                }
+            });
+        })();
 	</script>
 {% endblock %}
