@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
 
-{% block title %}syntext-ua{% endblock %}
+{% block title %}Розпізнати слово{% endblock %}
 
 {% block headimports %}
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -43,17 +43,16 @@
 			);
 		}
 
-		const search = () => {
-			API.send("GET", `tagged/word/${search_input.value}`, drawResponse);
-		}	
-	</script>
-	<script type="text/javascript">
-		(function() {
-  			document.querySelector('input').addEventListener('keydown', function(e) {
-    			if (e.keyCode === 13) {
-      				search();
-                }
-            });
-        })();
+		const search = () => API.send(
+			"GET",
+			`tagged/word/${search_input.value}`,
+			drawResponse
+		);
+
+		search_input.addEventListener(
+			"keydown",
+			e => e.keyCode == 13 ? search() : false
+		);
+
 	</script>
 {% endblock %}
