@@ -15,7 +15,7 @@ class Blocks{
 				properties += `
 					<tr>
 						<td>${Localization.udProps[key]}</td>
-						<td>${Localization.udValues[value]}</td>
+						<td>${Localization.udValues[key + "." + value]}</td>
 					</tr>
 				`;
 			}
