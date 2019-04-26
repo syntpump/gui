@@ -1,4 +1,18 @@
+from pysyntext.libs.db import DB
+from pysyntext.predefinator import Predefinator
+
 import flask
+import json
+
+
+print("Initializing classes...")
+
+predef = Predefinator(open("config.json"))
+
+morphRecogn = predef.inited(
+    "MorphologyRecognizer",
+    collection=DB().cli.get_collection
+)
 
 app = flask.Flask(__name__)
 app.jinja_env.trim_blocks = True
@@ -8,6 +22,11 @@ app.jinja_env.lstrip_blocks = True
 @app.route("/")
 def desk():
     return flask.render_template("index.html.j2")
+
+
+@app.route("/word_process")
+def displ():
+    return flask.render_template("process_word.html.j2")
 
 
 @app.route("/js/<string:script>")
@@ -26,11 +45,17 @@ def get_style(style):
     )
 
 
+# Return tagged word
 @app.route("/tagged/word/<string:word>")
 def req(word=None):
-    # return tagged word#
-    data = request.args.get('word', {}, type=str)
-    return jsonify(dict(results=str(data)))
+    result = morphRecogn.recognize(word, withApplier=True, showDB=True)
+    return json.dumps(
+        {
+            "bestMatch": result[0],
+            "allMatches": result[1]
+        },
+        default=str
+    )
 
 
 @app.route("/tagged/sentence/<string:sentence>")

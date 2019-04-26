@@ -1,0 +1,59 @@
+{% extends "base.html.j2" %}
+
+{% block title %}syntext-ua{% endblock %}
+
+{% block headimports %}
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+	<div class="search_top">
+		<input type="text" placeholder="Введіть слово" id="search_input"></input>
+		<button onclick="search()">Розпізнати</button>
+	</div>
+	<div id="search_results" class="hidden">
+		<h1>Найбільш ймовірний варіант</h1>
+		<div id="most_possible"></div>
+		<h1>Усі можливі варіанти</h1>
+		<div id="all_rules"></div>
+	</div>
+{% endblock %}
+
+{% block endbody %}
+	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/blocks.js"></script>
+	<script type="text/javascript" src="js/localization.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		const search_results = $("search_results");
+		const most_possible = $("most_possible");
+		const all_rules = $("all_rules");
+		const search_input = $("search_input");
+
+		const drawResponse = data => {
+			search_results.className = "visible";
+			most_possible.clear();
+			all_rules.clear();
+			most_possible.innerHTML += Blocks.ruleContainer(data["bestMatch"]);
+			data["allMatches"].forEach(
+				rule => all_rules.innerHTML += Blocks.ruleContainer(rule)
+			);
+		}
+
+		const search = () => {
+			API.send("GET", `tagged/word/${search_input.value}`, drawResponse);
+		}	
+	</script>
+	<script type="text/javascript">
+		(function() {
+  			document.querySelector('input').addEventListener('keydown', function(e) {
+    			if (e.keyCode === 13) {
+      				search();
+                }
+            });
+        })();
+	</script>
+{% endblock %}

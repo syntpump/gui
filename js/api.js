@@ -19,6 +19,11 @@ class API{
 		const requester = new XMLHttpRequest();
 
 		requester.onreadystatechange = e => {
+			if(
+				requester.readyState !== 4 ||
+				requester.status !== 200 ||
+				!requester.responseText
+			) return false;
 			callback(JSON.parse(requester.responseText));
 		}
 
