@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
 
-{% block title %}Syntext-ua{% endblock %}
+{% block title %}Протегувати речення{% endblock %}
 
 {% block headimports %}
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -16,15 +16,13 @@
 	</div>
 	<div id="search_results" class="hidden">
 		<h1>Найбільш ймовірний варіант</h1>
-		<div id="most_possible"></div>
-		<h1>Усі можливі варіанти</h1>
-		<div id="all_rules"></div>
-		<div>
-		<button>Проінспектувати правило</button>
+		<div id="sentence_tagging"></div>
 	</div>
 	</div>
 {% endblock %}
 
 {% block endbody %}
 	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/blocks.js"></script>
+	<script type="text/javascript" src="js/localization.js"></script>
 {% endblock %}
