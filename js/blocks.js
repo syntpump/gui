@@ -2,11 +2,9 @@ class Blocks{
 	/*This class contains HTML templates.
 	*/
 
-	static ruleContainer(args){
-		if(args["_id"])
-			args["_id"] = `<span class="ruleId">id: ${args["_id"]}</span>`;
-		else
-			args["_id"] = ``;
+	static PropertiesTable(args){
+		if(Object.keys(args).length == 0)
+			return "";
 
 		let properties = "";
 
@@ -21,14 +19,35 @@ class Blocks{
 			}
 		}
 
+		return `<table class="listTable">${properties}</table>`;
+	}
+
+	static RuleContainer(args){
+		if(args["_id"])
+			args["_id"] = `<span class="ruleId">id: ${args["_id"]}</span>`;
+		else
+			args["_id"] = ``;
+
 		return `
 			<div class="ruleBlock box">
 				<div class="top">
 					<span class="upos">${args["upos"]}</span>
 					<span class="xpos">${args["xpos"]}</span>
 				</div>
-				<table class="properties">${properties}</table>
+				${Blocks.PropertiesTable(args)}
 				${args["_id"]}
+			</div>
+		`;
+	}
+
+	static TaggedSenWord(args){
+		return `
+			<div class="galleryItem">
+				<span class="caption">${args["word"]}</span>
+				<div class="ruleBlock box narrow">
+					<span class="upos">${args["upos"]}</span>
+					${Blocks.PropertiesTable(args)}
+				</div>
 			</div>
 		`;
 	}
