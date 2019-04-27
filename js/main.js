@@ -20,3 +20,10 @@ HTMLElement.prototype.toOneFrom = function(obj){
 	this.innerHTML += this.applierFn(obj);
 	this.applierFn = null;
 }
+
+HTMLElement.prototype.runOnEnter = function(fn){
+	this.addEventListener(
+		"keydown",
+		e => e.keyCode == 13 ? fn() : false
+	);
+}
