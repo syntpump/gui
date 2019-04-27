@@ -26,17 +26,15 @@
 	},
 	"ContextualProcessor": {
 		"$location": "libs.ctxmorph",
-		"collection": "xposrules",
-		"applier": {
-			"object": "function",
-			"name": "libs.morphology,MorphologyRecognizer,selectByEnding"
+		"recognizer": {
+			"object": "defined",
+			"name": "recognizer"
 		},
-		"priority": "dominations.json",
-		"tagparser": {
-			"object": "class",
-			"name": "MTEParser"
-		},
-		"rulescoll": "ctxrules"
+		"rulescoll": {
+			"object": "lambda",
+			"data": "ctxrules",
+			"name": "rulescoll"
+		}
 	},
 	"ConlluReader": {
 		"$location": "libs.ud.conllu",
