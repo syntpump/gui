@@ -15,9 +15,9 @@
 		<button onclick="search()">Розпізнати</button>
 	</div>
 	<div id="search_results" class="hidden">
-		<h1>Найбільш ймовірний варіант</h1>
+		<h1>Розпізнані властивості</h1>
 		<div id="most_possible"></div>
-		<h1>Усі можливі варіанти</h1>
+		<h1>Використані правила</h1>
 		<div id="all_rules"></div>
 	</div>
 {% endblock %}
@@ -37,15 +37,17 @@
 			search_results.className = "visible";
 			most_possible.clear();
 			all_rules.clear();
-			most_possible.innerHTML += Blocks.ruleContainer(data["bestMatch"]);
-			data["allMatches"].forEach(
-				rule => all_rules.innerHTML += Blocks.ruleContainer(rule)
-			);
+			most_possible
+				.apply(Blocks.ruleContainer)
+				.toOneFrom(data["bestMatch"]);
+			all_rules
+				.apply(Blocks.ruleContainer)
+				.toEachFrom(data["allMatches"]);
 		}
 
 		const search = () => API.send(
 			"GET",
-			`tagged/word/${search_input.value}`,
+			`tagged/word/${encodeURIComponent(search_input.value)}`,
 			drawResponse
 		);
 
@@ -53,6 +55,5 @@
 			"keydown",
 			e => e.keyCode == 13 ? search() : false
 		);
-
 	</script>
 {% endblock %}

@@ -3,10 +3,10 @@ class Blocks{
 	*/
 
 	static ruleContainer(args){
-		if(!args["_id"])
-			args["_id"] = `<span class="ruleId noId">(немає id)</span>`;
-		else
+		if(args["_id"])
 			args["_id"] = `<span class="ruleId">id: ${args["_id"]}</span>`;
+		else
+			args["_id"] = ``;
 
 		let properties = "";
 
