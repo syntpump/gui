@@ -3,13 +3,12 @@ class Blocks{
 	*/
 
 	static PropertiesTable(args){
-		if(Object.keys(args).length == 0)
-			return "";
-
+		let objIsEmpty = true;
 		let properties = "";
 
 		for(const [key, value] of Object.entries(args)){
 			if(key in Localization.udProps){
+				objIsEmpty = false;
 				properties += `
 					<tr>
 						<td>${Localization.udProps[key]}</td>
@@ -18,6 +17,9 @@ class Blocks{
 				`;
 			}
 		}
+
+		if(objIsEmpty)
+			return "";
 
 		return `<table class="listTable">${properties}</table>`;
 	}

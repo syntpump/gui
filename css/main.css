@@ -90,6 +90,14 @@ button:active {
 	margin-right: 15px;
 }
 
+.galleryItem > * {
+	display: inline-table;
+}
+
+.galleryItem > .caption {
+	display: block;
+} 
+
 .galleryItem:last-child {
 	margin-right: 0;
 }
