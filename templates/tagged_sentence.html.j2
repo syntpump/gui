@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
 
-{% block title %}Розпізнати слово{% endblock %}
+{% block title %}Протегувати речення{% endblock %}
 
 {% block headimports %}
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -11,14 +11,12 @@
 
 {% block content %}
 	<div class="search_top">
-		<input type="text" placeholder="Введіть слово" id="search_input"></input>
+		<input type="text" placeholder="Введіть речення" id="search_input" class="wide"></input>
 		<button onclick="search()">Розпізнати</button>
 	</div>
 	<div id="search_results" class="hidden">
-		<h1>Розпізнані властивості</h1>
-		<div id="most_possible"></div>
-		<h1>Використані правила</h1>
-		<div id="all_rules"></div>
+		<div id="sentence_tagging" class="verticalGallery"></div>
+	</div>
 	</div>
 {% endblock %}
 
@@ -29,28 +27,23 @@
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript">
 		const search_results = $("search_results");
-		const most_possible = $("most_possible");
-		const all_rules = $("all_rules");
 		const search_input = $("search_input");
+		const sentence_tagging = $("sentence_tagging");
 
 		const drawResponse = data => {
 			search_results.className = "visible";
-			most_possible.clear();
-			all_rules.clear();
-			most_possible
-				.apply(Blocks.RuleContainer)
-				.toOneFrom(data["bestMatch"]);
-			all_rules
-				.apply(Blocks.RuleContainer)
-				.toEachFrom(data["allMatches"]);
+			with(sentence_tagging){
+				clear();
+				apply(Blocks.TaggedSenWord).toEachFrom(data);
+			}
 		}
 
 		const search = () => API.send(
 			"GET",
-			`tagged/word/${encodeURIComponent(search_input.value)}`,
+			`tagged/sentence/${encodeURIComponent(search_input.value)}`,
 			drawResponse
 		);
 
-		search_results.runOnEnter(search);
+		search_input.runOnEnter(search);
 	</script>
 {% endblock %}

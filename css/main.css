@@ -1,8 +1,12 @@
 body {
-	background: #eee;
+	background: #f1f1f1;
 	font-family: "Roboto", "Segoe UI", sans-serif;
 	padding: 40px 20px;
 	color: #222
+}
+
+input, button {
+	transition: .3s;
 }
 
 h1 {
@@ -15,15 +19,25 @@ h2 {
 
 input[type="text"] {
 	border: 0;
-	padding: 10px;
+	background: transparent;
+	box-shadow: 0 -2px inset #ccc;
+	padding: 10px 0;
 	font: inherit;
 	width: 250px
 }
 
+input[type="text"]:focus {
+	box-shadow: 0 -2px inset #bbb;
+}
+
+.wide {
+	width: 100%;
+	max-width: 600px;
+}
+
 button {
 	border: 0;
-	background: black;
-	color: white;
+	background: #ccc;
 	padding: 10px 20px;
 	font: inherit;
 	cursor: pointer;
@@ -31,7 +45,11 @@ button {
 }
 
 button:hover {
-	background: #333
+	background: #bbb
+}
+
+button:active {
+	background: #aaa
 }
 
 .hidden{
@@ -42,11 +60,46 @@ button:hover {
 	display: block
 }
 
+.verticalGallery {
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
 .box {
 	margin: 20px 0;
 	background: white;
 	padding:10px;
 	max-width: 600px;
+}
+
+.box.narrow {
+	width: 300px
+}
+
+.box .listTable {
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+
+.box .listTable td:first-child {
+	padding: 5px 15px 5px 0
+}
+
+.galleryItem {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.galleryItem > .caption {
+	display: block;
+} 
+
+.galleryItem:last-child {
+	margin-right: 0;
+}
+
+#search_results {
+	margin-top: 50px;
 }
 
 .ruleBlock .upos {
@@ -58,19 +111,6 @@ button:hover {
 	color: #999
 }
 
-.ruleBlock .properties {
-	margin: 20px 0;
-	border-collapse: collapse;
-}
-
 .ruleBlock .ruleId:not(.noId) {
 	font-family: "Roboto Mono", monospace
-}
-
-.ruleBlock .properties td:first-child {
-	padding: 5px 15px 5px 0
-}
-
-.ruleBlock .properties {
-	border-collapse: collapse;
 }

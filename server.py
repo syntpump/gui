@@ -1,4 +1,3 @@
-from pysyntext.libs.db import DB
 from pysyntext.predefinator import Predefinator
 
 import flask
@@ -9,9 +8,17 @@ print("Initializing classes...")
 
 predef = Predefinator(open("config.json"))
 
+db = predef.inited("DB")
+
 morphRecogn = predef.inited(
     "MorphologyRecognizer",
-    collection=DB().cli.get_collection
+    collection=db.cli.get_collection
+)
+
+ctxProc = predef.inited(
+    "ContextualProcessor",
+    recognizer=morphRecogn,
+    rulescoll=db.cli.get_collection
 )
 
 app = flask.Flask(__name__)
@@ -25,8 +32,13 @@ def desk():
 
 
 @app.route("/word_process")
-def displ():
+def disp1():
     return flask.render_template("process_word.html.j2")
+
+
+@app.route("/tagged_sentence")
+def disp2():
+    return flask.render_template("tagged_sentence.html.j2")
 
 
 @app.route("/js/<string:script>")
@@ -60,7 +72,10 @@ def req(word=None):
 
 @app.route("/tagged/sentence/<string:sentence>")
 def tag_sent(sentence=None):
-    # return tagged sentence
+    return json.dumps(
+        ctxProc.tagged(sentence),
+        default=str
+    )
     return 1
 
 
