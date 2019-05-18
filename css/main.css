@@ -17,6 +17,9 @@ h2 {
 	font-size: 2.2em
 }
 
+h3.container {
+	font-size: 4.2em
+}
 input[type="text"] {
 	border: 0;
 	background: transparent;
@@ -109,4 +112,26 @@ button:active {
 
 .ruleBlock .ruleId:not(.noId) {
 	font-family: "Roboto Mono", monospace
+}
+
+.container {
+	margin: 10px 0;
+	text-decoration: none;
+	color: #222;
+	background-color: white;
+	display: inline-block;
+	padding: 10px;
+	max-width: 200px;
+	word-break: break-all;
+	font-family: "Roboto Mono";
+}
+.contBlock{
+	padding: 10px;
+	margin: 10px 0;
+	max-width: 500px;
+	text-decoration: none;
+	display: block;
+	text-align: justify;
+	word-break: break-all;
+	color: #222;
 }
