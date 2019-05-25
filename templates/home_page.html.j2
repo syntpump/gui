@@ -10,24 +10,35 @@
 {% endblock %}
 
 {% block content %}
-	<div class="contBlock">
-		<a href="/process_word" class="container">
-				<h3 class="container">Контекстуальний процесор</h3>	
-				<h3 class="container">88%</h3>
-				<h3 class="container">Точність розпізнавання</h3>
-		</a>
-	</div>
-	<div class="contBlock">
-		<a href="/tagged_sentence" class="container">
-			<div>
-				<h3 class="container"></h3>	
-				<h3 class="container"></h3>
-				<h3 class="container"></h3>
-			</div>
-		</a>
+	<div class="navig">
+  	<a class="active" href="">Home</a>
+  	<a href="">FAQ</a>
+  	<a href="">About us</a>
 	</div>
 	<div>
+		
 	</div>
+	<section>
+		<div>
+			<a href="/process_word" class="contBlock">
+				<h3 class="container">Морфоаналізатор<br> </h3>
+				<h3 class="container">88%<br>частини мови</h3>
+				<h3 class="container">72%<br>морфологія</h3>
+			</a>
+		</div>
+		<div>
+			<a href="/tagged_sentence" class="contBlock">
+				<h3 class="container">Розбiр синтаксису<br> </h3>
+				<h3 class="container">51%<br>точність</h3>
+			</a>
+		</div>	
+		<div>
+			<a href="" class="contBlock">
+				<h3 class="container">Контекстуальний<br>процесор</h3>
+				<h3 class="container">88%<br>частини мови</h3>
+			</a>
+		</div>
+	</section>
 {% endblock %}
 
 {% block endbody %}
