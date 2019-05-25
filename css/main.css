@@ -115,7 +115,6 @@ button:active {
 }
 
 .container {
-	margin: 15px 0;
 	text-decoration: none;
 	color: #222;
 	background-color: white;
@@ -160,7 +159,7 @@ button:active {
   color: black;
 }
 
-.navig a.active {
+a.active {
   background-color: #4CAF50;
   color: white;
 }
