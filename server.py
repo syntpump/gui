@@ -28,10 +28,10 @@ app.jinja_env.lstrip_blocks = True
 
 @app.route("/")
 def desk():
-    return flask.render_template("index.html.j2")
+    return flask.render_template("home_page.html.j2")
 
 
-@app.route("/word_process")
+@app.route("/process_word")
 def disp1():
     return flask.render_template("process_word.html.j2")
 
