@@ -123,5 +123,17 @@
    		],
 		"ignoreposes": ["SYM", "X", "PUNCT"],
 		"testenabled": false
+	},
+	"CYKAnalyzer": {
+		"$location": "libs.cykalgo",
+		"ctx": {
+			"object": "defined",
+			"name": "ctx"
+		},
+		"collection": {
+			"object": "lambda",
+			"data": "prodgrammar",
+			"name": "collection"
+		}
 	}
 }
