@@ -38,5 +38,72 @@
 			drawTree.bind(null, search_input.value)
 		);
 
+		const drawTree = (sentence, data) => {
+
+			tree_container.clear();
+
+			const tree = new TreeParser(data);
+
+			let levels = [];
+			let connections = [];
+
+			const addToLevels = (vertex, level) => {
+				if(levels.length < level)
+					levels.push([]);
+
+				levels[level - 1].push(vertex);
+
+				if(!vertex.hasOwnProperty("linksTo"))
+					return null;
+				
+				for(let child of vertex.linksTo){
+					addToLevels(
+						tree.getById(child), level + 1);
+					connections.push([vertex.id, child]);
+				}
+			}
+
+			addToLevels(
+				tree.getById(tree.rootId), 1);
+
+			levels.reverse();
+
+			// adding levels
+			for(let i=0; i<levels.length; i++){
+
+				const row_num = levels.length - i;
+
+				tree_container.apply(Blocks.TreeRow)
+					.toOneFrom({
+						n: row_num
+					});
+
+				let counter = 0;
+
+				// adding words on level
+				for(let token of levels[i]){
+					$(`row${row_num}`).apply(Blocks.TreeEntity)
+						.toOneFrom({
+							word: token.hasOwnProperty("word")
+									? token.word
+									: token.tag,
+							n: token.id,
+							left: counter * 100,
+							morph: token.hasOwnProperty("morph")
+									? token.morph
+									: {}
+						});
+					counter += 1;
+				}
+
+			}
+
+			for(let [from, to] of connections)
+				$(`word${from}`).pointerTo(
+					$(`word${to}`));
+
+		}
+
+		search_input.runOnEnter(search);
 	</script>
 {% endblock %}
