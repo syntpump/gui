@@ -1,0 +1,42 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Граматика продукцій{% endblock %}
+
+{% block headimports %}
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/tree.css">
+{% endblock %}
+
+{% block content %}
+	<div class="search_top">
+		<input type="text" placeholder="Введіть речення" id="search_input" class="fullwide"></input>
+		<button onclick="search()">Аналізувати</button>
+	</div>
+	<div id="search_results">
+		<div id="arrows"></div>
+		<div id="tree"></div>
+	</div>
+	</div>
+{% endblock %}
+
+{% block endbody %}
+	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/blocks.js"></script>
+	<script type="text/javascript" src="js/treeParser.js"></script>
+	<script type="text/javascript" src="js/localization.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		const tree_container = $("tree");
+		const search_results = $("search_results");
+		const search_input = $("search_input");
+		const sentence_tagging = $("sentence_tagging");
+		const arrows = $("arrows");
+
+		const search = () => API.send(
+			"GET",
+			`sentence/gramtree/${encodeURIComponent(search_input.value)}`,
+			drawTree.bind(null, search_input.value)
+		);
+
+	</script>
+{% endblock %}
