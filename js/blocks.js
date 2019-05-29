@@ -33,7 +33,7 @@ class Blocks{
 		return `
 			<div class="ruleBlock box">
 				<div class="top">
-					<span class="upos">${args["upos"]}</span>
+					<span class="largeCaption">${args["upos"]}</span>
 					<span class="xpos">${args["xpos"]}</span>
 				</div>
 				${Blocks.RulePropertiesTable(args)}
@@ -63,6 +63,13 @@ class Blocks{
 	}
 
 	static TreeEntity(args){
+		let popup = `
+			<div class="popup">
+				${args["word"]}<br>
+				<span class="largeCaption">${args["tag"]}</span><br>
+				${Blocks.RulePropertiesTable(args["morph"])}
+			</div>
+		`;
 		return `
 				<div
 					class="word"
@@ -70,10 +77,7 @@ class Blocks{
 					style="left:${args["left"]}px"
 				>
 					${args["word"]}
-					<div class="popup">
-						${args["word"]}<br>
-						${Blocks.RulePropertiesTable(args["morph"])}
-					</div>
+					${args["isTerminal"] ? popup : ""}
 				</div>
 		`;
 	}

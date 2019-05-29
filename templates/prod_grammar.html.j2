@@ -85,9 +85,13 @@
 				for(let token of levels[i]){
 					$(`row${row_num}`).apply(Blocks.TreeEntity)
 						.toOneFrom({
+							isTerminal: token.tag == "T",
 							word: token.hasOwnProperty("word")
 									? token.word
 									: token.tag,
+							tag: token.hasOwnProperty("morph")
+									? token.morph.upos
+									: "",
 							n: token.id,
 							left: counter * 100,
 							morph: token.hasOwnProperty("morph")

@@ -61,7 +61,7 @@
 	display: none;
 	position: absolute;
 	background: white;
-	width: 200px;
+	width: 300px;
 	top: -5px;
 	left: -5px;
 	padding: 5px;
@@ -71,4 +71,18 @@
 
 .word:hover .popup {
 	display: block;
+}
+
+.popup .listTable {
+	margin: 20px 0;
+	border-collapse: collapse;
+	width: 100%
+}
+
+.popup .listTable td:first-child {
+	padding: 5px 15px 5px 0
+}
+
+.popup .listTable tr td:first-child {
+	color: #888
 }
