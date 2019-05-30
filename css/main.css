@@ -130,7 +130,6 @@ button:active {
     max-width: 200px;
     width: 35%;
     padding: 15px;
-    align-content: center;
     overflow: auto;
     box-sizing: border-box;
 }
