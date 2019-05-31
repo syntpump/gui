@@ -7,37 +7,41 @@
 {% endblock %}
 
 {% block header %}
-	<div class="header">
-		<h2>Syntext-ua</h2>
-	</div>
 {% endblock %}
 
 {% block content %}
-	<div class="navig">
-  	<a class="active" href="">Home</a>
-  	<a href="">FAQ</a>
-  	<a href="">About us</a>
+	<div class="header">
+		<h1>Syntext-ua</h1>
 	</div>
-	<section>
-		<div>
-			<a href="/process_word" class="contBlock">
-				<h3 class="container">Морфоаналізатор<br> </h3>
-				<h3 class="container">88%<br>частини мови</h3>
-				<h3 class="container">72%<br>морфологія</h3>
-			</a>
+	<section class="linkBlock">
+		<h2>Морфоаналізатор</h2>
+		<div class="statistics">
+			<div>
+				<span class="largeCaption">88%</span>
+				<span class="smallCaption">частини мови</span>
+			</div>
+			<div>
+				<span class="largeCaption">72%</span>
+				<span class="smallCaption">морфологія</span>
+			</div>
 		</div>
-		<div>
-			<a href="/tagged_sentence" class="contBlock">
-				<h3 class="container">Розбiр синтаксису<br> </h3>
-				<h3 class="container">51%<br>точність</h3>
-			</a>
-		</div>	
-		<div>
-			<a href="" class="contBlock">
-				<h3 class="container">Контекстуальний<br>процесор</h3>
-				<h3 class="container">88%<br>частини мови</h3>
-			</a>
+		<p>Афіксальний морфоаналізатор з’ясовує морфологічні властивості слів. Працює на завантажених у базу даних правилах. Їх можна змінювати/створювати вручну, або згенерувати одним із морфологічних тренерів.</p>
+		<a href="/process_word">
+			<button>Перейти</button>
+		</a>
+	</section>
+	<section class="linkBlock">
+		<h2>Граматика продукцій</h2>
+		<div class="statistics">
+			<div>
+				<span class="largeCaption">88%</span>
+				<span class="smallCaption">частини мови</span>
+			</div>
 		</div>
+		<p>опис</p>
+		<a href="/prod_grammar">
+			<button>Перейти</button>
+		</a>
 	</section>
 {% endblock %}
 
