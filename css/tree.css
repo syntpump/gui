@@ -1,0 +1,88 @@
+.arrow, .caption {
+	position: absolute;
+}
+
+.caption {
+	width: 50px;
+	background: #f1f1f1;
+	color: #999;
+	text-align: center;
+	margin-left: -25px;
+	margin-top: -10px;
+	padding: 5px 0;
+	z-index: 1;
+}
+
+.arrow {
+	height: 1px;
+	background-color: #999;
+	transform-origin: bottom left;
+}
+
+.arrow:before, .arrow:after {
+	content: ' ';
+	background: #999;
+	width: 15px;
+	height: 1px;
+	position: absolute;
+	display: block;
+	right: 0;
+}
+
+.arrow:before {
+	top: -2px;
+	transform: rotate(15deg);
+}
+
+.arrow:after {
+	top: 2px;
+	transform: rotate(-15deg);
+}
+.row {
+	position: relative;
+	border-top: 1px dotted;
+	padding: 40px 0;
+}
+
+.number {
+	float: right;
+	position: relative;
+	top: calc(-40px - .7em);
+	background: #f1f1f1;
+	padding: 0 0 0 5px
+}
+
+.word {
+	position: relative;
+	display: inline;
+}
+
+.word .popup {
+	display: none;
+	position: absolute;
+	background: white;
+	width: 300px;
+	top: -5px;
+	left: -5px;
+	padding: 5px;
+	z-index: 2;
+	
+}
+
+.word:hover .popup {
+	display: block;
+}
+
+.popup .listTable {
+	margin: 20px 0;
+	border-collapse: collapse;
+	width: 100%
+}
+
+.popup .listTable td:first-child {
+	padding: 5px 15px 5px 0
+}
+
+.popup .listTable tr td:first-child {
+	color: #888
+}

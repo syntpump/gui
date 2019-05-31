@@ -21,6 +21,12 @@ ctxProc = predef.inited(
     rulescoll=db.cli.get_collection
 )
 
+cyk = predef.inited(
+    "CYKAnalyzer",
+    ctx=ctxProc,
+    collection=db.cli.get_collection
+)
+
 app = flask.Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
@@ -39,6 +45,11 @@ def disp1():
 @app.route("/tagged_sentence")
 def disp2():
     return flask.render_template("tagged_sentence.html.j2")
+
+
+@app.route("/prod_grammar")
+def disp3():
+    return flask.render_template("prod_grammar.html.j2")
 
 
 @app.route("/js/<string:script>")
@@ -87,8 +98,8 @@ def sent_dtree(sentence=None):
 
 @app.route("/sentence/gramtree/<string:sentence>")
 def sent_gtree(sentence=None):
-    # return grammatical tree
-    return 3
+    return json.dumps(
+        cyk.getGrammar(sentence))
 
 
 @app.route("/word/guess/<string:word>")
